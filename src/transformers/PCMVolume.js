@@ -39,7 +39,6 @@ class VolumeTransformer extends Transform {
 
     if (krypton && krypton.pcm.simd && this._krypton) {
       if (chunk.length < 64) return done();
-
       transformed = this._krypton(chunk.slice(0, chunk.length - (chunk.length % 64)), this.volume);
       complete = transformed.length;
     } else {
